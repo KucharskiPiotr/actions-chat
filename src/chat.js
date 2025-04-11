@@ -8,6 +8,7 @@ const { newPullRequest, newRelease } = require('./messages')
  * @param {string} url - Google Chat Webhook URL
  */
 const send = async (url) => {
+  console.log(`🚨 Event name received: ${github.context.eventName}`);
   switch (github.context.eventName) {
     case 'pull_request': {
       await handlePullRequest(url)
